@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 export default function NavBar() {
-  const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  console.log(pathname);
 
   return (
     <Navbar
@@ -25,8 +22,8 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav>
-            <Nav.Link as={Link} href="/hello" active={pathname === "/hello"}>
-              Hello
+            <Nav.Link as={Link} href="/static" active={pathname === "/static"}>
+              Static
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
